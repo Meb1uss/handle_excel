@@ -10,13 +10,13 @@ const data = ref([]);
 let isChange = ref(false);
 // tableData 长度不为0且样式没有改变时，改变格式按钮可用
 const disabled = computed(() => {
-  return Boolean(tableData.value.length & !isChange.value);
+  return tableData.value.length && !isChange.value;
 });
 
 // 获得子组件数据
 function getEntityWord(arr) {
   tableData.value = arr;
-  console.log(arr);
+  console.log(tableData.value.length);
 }
 
 // 改变格式
